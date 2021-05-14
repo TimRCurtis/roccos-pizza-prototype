@@ -1,0 +1,19 @@
+// =====================
+// Navigation Bar
+// =====================
+
+header {
+    nav {
+        a.navbar-brand {
+            i.fa {
+                color: $theme-primary--dark;
+            }
+        }
+    }
+}
+
+.scrolling-active {
+    background-color: rgba($color: $theme-dark--light, $alpha: 0.8);
+    @include prefix(box-shadow, 0 3px 1rem rgba(0,0,0,.1),webkit,moz);
+}
+

@@ -1,0 +1,40 @@
+// =====================
+// Body Elements
+// =====================
+
+.bg {
+    @include m('primary') {
+        background-color: $theme-primary!important;
+    }
+    @include m('secondary') {
+        background-color: $theme-secondary;
+        @include e('tranparent') {
+            background-color: transparent;
+            transition: 750ms ease-in;
+        }
+    }
+    @include m('third') {
+        background-color: $theme-third;
+    }
+}
+
+.box-height {
+    height: 400px;
+}
+.color {
+    @include m('primary') {
+        color: $theme-primary
+    }
+    @include m('secondary') {
+        color: $theme-secondary
+    }
+    @include m('third') {
+        color: $theme-third
+    }
+}
+
+footer {
+    p {
+        color: $theme-light;
+    }
+}

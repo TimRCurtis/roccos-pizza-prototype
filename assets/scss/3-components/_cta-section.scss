@@ -1,0 +1,15 @@
+// =====================
+// CTA Section
+// =====================
+
+.cta {
+    height: 400px;
+    .row {
+        @include padding(125px,null,null,null);
+        h1 {
+            color: $theme-light;
+            font-size: 60px;
+            font-weight: 700;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// =====================
+// Links
+// =====================
+
+footer {
+    .nav {
+        a.nav-link {
+            color: $theme-primary--darker;
+            text-decoration: none;
+            &:hover {
+                color: $theme-primary--lighter;
+            }
+        }
+    }
+}

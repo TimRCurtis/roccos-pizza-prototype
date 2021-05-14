@@ -1,0 +1,55 @@
+// =====================
+// Business Info
+// =====================
+
+.business-info {
+    background: linear-gradient(to top, rgba($color: $theme-primary, $alpha: 0.3), 30%, rgba($color: $theme-light, $alpha: 0.8));
+    .map-box {
+        background: 
+        url('/assets/imgs/roccos-pizza-map.png');
+        border-radius: 10px;
+        background-size: cover;
+        background-position-y: center;
+        background-position-x: center;
+        height: 250px;
+    }
+    .info-box {
+        h3,
+        h4 {
+            font-weight: 700;
+        }
+        i.fas {
+            color: $theme-primary;
+        }
+    }
+    .busi-hours {
+        background-color: rgba($color: $theme-dark--light, $alpha: 0.7);
+        border-radius: 10px;
+        h3,
+        h4,
+        p {
+            color: $theme-light;
+        }
+    }
+}
+.business-info_blank {
+    .info-box {
+        h3,
+        h4 {
+            font-weight: 700;
+        }
+        i.fas {
+            color: $theme-primary;
+        }
+    }
+    .busi-hours {
+        background-color: rgba($color: $theme-dark--light, $alpha: 0.7);
+        border-radius: 10px;
+        height: 350px;
+        h3,
+        h4,
+        p {
+            color: $theme-light;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+// =====================
+// Cards
+// =====================
+
+.card {
+    @include box-shadow(0,20px,20px,-15px,rgba(0,0,0,0.3));
+    border: 0px solid transparent;
+  }
+  .card-body {
+    border-top: 5px solid $theme-secondary;
+    @include padding(0.9375rem, null, null, null);
+    @include m('dark') {
+      background-color: $theme-dark;
+      color: $theme-light;
+    }
+};
+  
+/* =====================*/
+/* =====================*/
+.c-card * {
+    display: block;
+    box-sizing: border-box;
+};
+.card-container {
+    max-width: 900px;
+    margin: $center-margin;
+};
+.c-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    background-color: #fff;
+    @include box-shadow(0,20px,20px,-15px,rgba(0,0,0,0.3));
+    &:hover {
+      transform: translateY(-5px);
+      @include box-shadow(0,20px,20px,-15px,rgba(0,0,0,0.3));
+    }
+    @include e(header) {
+    }
+    @include e(image) {
+      max-width: 100%;
+    }
+    @include e(body) {
+      @include padding(20px,20px,20px,20px);
+    }
+    @include e(title) {
+      @include font-size(15px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+    }
+    @include e(subtitle) {
+      @include font-size(13px);
+      @include margin(5px,null,null,null);
+      padding: 0;
+    }
+    @include e(intro) {
+      @include margin(null,null,0px,null);
+    }
+    @include e(footer) {
+      @include padding(20px,20px,20px,20px);
+      border-top: 1px solid #ddd;
+    }
+};
+  
+/* Center Card -------------------*/
+  
+.c-card {
+    @include m(center) {
+      text-align: center;
+    }
+};
+  
+/* Wide Card -------------------*/
+  
+.c-card {
+    @include m(wide) {
+      max-width: 740px;
+  
+      .c-card {
+        @include e(header) {
+          float: left;
+        }
+        @include e(body) {
+          float: left;
+          @include padding(30px,null,null,null);
+        }
+        @include e(footer) {
+          clear: both;
+          text-align: center;
+        }
+      }
+    }
+};
+  
+/* Flip Card -------------------*/
+  
+.c-card-flip {
+    width: 450px;
+    height: 250px;
+    margin: 20px auto;
+    cursor: pointer;
+    @include prefix(perspective, 1000, webkit);
+    @include e(flipper) {
+      position: relative;
+      transition: 0.8s ease-in-out;
+      transform-style: preserve-3d;
+    }
+    &__front,
+    &__back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 450px;
+      height: 250px;
+      @include prefix(perspective, 1000, webkit);
+      @include prefix(backface-visibility, hidden, webkit);
+    }
+    @include e(back) {
+      transform: rotateY(180deg);
+      background-color: #ddd;
+    }
+    @include e(title) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 50px;
+      margin: auto;
+    }
+    &:hover {
+      .c-card-flip {
+        @include e(flipper);
+        transform: rotateY(180deg);
+      }
+    }
+};

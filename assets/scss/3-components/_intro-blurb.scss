@@ -1,0 +1,17 @@
+// =====================
+// Intro Blurb
+// =====================
+
+.intro-blurb {
+    h1 {
+        font-weight: 700;
+    }
+    .subtitle {
+        font-size: 16px;
+        font-family: $second-font;
+        color: $theme-third;
+    }
+    img {
+        border-radius: 10px;
+    }
+}

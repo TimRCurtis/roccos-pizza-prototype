@@ -1,0 +1,38 @@
+// =====================
+// Page Title
+// =====================
+
+.page-title {
+    height: 200px;
+    .container {
+        @include padding(210px,null,null,null);
+    }
+        h1 {
+            color: $theme-light;
+            font-size: 60px;
+            font-weight: 700;
+        }
+}
+
+.lg-bg {
+    background: 
+        linear-gradient(
+            rgba($color: $theme-dark--lighter, $alpha: 0.7),
+            rgba($color: $theme-dark--lighter, $alpha: 0.7)
+        ),
+        url('https://img.pizza/900/350');
+    background-size: cover;
+    height: 580px;
+    border-bottom: solid 10px $theme-primary;
+}
+.md-bg {
+    background: 
+        linear-gradient(
+            rgba($color: $theme-dark--lighter, $alpha: 0.7),
+            rgba($color: $theme-dark--lighter, $alpha: 0.7)
+        ),
+        url('https://img.pizza/900/350');
+    background-size: cover;
+    height: 380px;
+    border-bottom: solid 10px $theme-primary;
+}

@@ -1,0 +1,159 @@
+// =====================
+// Family
+// =====================
+
+@mixin first($num) {
+    @if $num == 1 {
+      &:first-child {
+        @content;
+      }
+    } @else {
+      false {
+        @content;
+      }
+    }
+  };
+@mixin last($num) {
+    false {
+      @content;
+    }
+  };
+@mixin after-first($num) {
+    false {
+      @content;
+    }
+  };
+@mixin from-end($num) {
+    & :nth-last-child(#{$num}) {
+      @content;
+    }
+  };
+@mixin between($first, $last) {
+    false {
+      @content;
+    }
+  };
+@mixin even-between($frist, $last) {
+    false {
+      @content;
+    }
+  };
+@mixin odd-between($frist, $last) {
+    false {
+      @content;
+    }
+  };
+@mixin n-between($num, $first, $last) {
+    false {
+      @content;
+    }
+  };
+@mixin all-but($num) {
+    &:not(:nth-child(#{$num})) {
+      @content;
+    }
+  };
+@mixin each($num) {
+    &:nth-child(#{$num}) {
+      @content;
+    }
+  };
+@mixin every($num) {
+    &:nth-child(#{$num}n) {
+      @content;
+    }
+  };
+@mixin from-first-last($num) {
+    &:nth-child(#{$num}),
+    &:nth-last-child(#{$num}) {
+      @content;
+    }
+  };
+@mixin middle($num) {
+    &:nth-child(#{round($num / 2)}) {
+      @content;
+    }
+  };
+@mixin all-but-first-last($num) {
+    false {
+      @content;
+    }
+  };
+@mixin first-of($limit) {
+    &:nth-last-child(#{$limit}):first-child {
+      @content;
+    }
+  };
+@mixin last-of($limit) {
+    &:nth-of-type(#{$limit}):nth-last-of-type(1) {
+      @content;
+    }
+  };
+@mixin at-least($num) {
+    $selector: &;
+    $child: nth(nth($selector, -1), -1);
+  
+    false,
+    false {
+      @content;
+    }
+  };
+@mixin at-most($num) {
+    $selector: &;
+    $child: nth(nth($selector, -1), -1);
+  
+    false,
+    false {
+      @content;
+    }
+  };
+@mixin in-between($min, $max) {
+    $selector: &;
+    $child: nth(nth($selector, -1), -1);
+  
+    false,
+    false {
+      @content;
+    }
+  };
+@mixin first-child() {
+    &:first-of-type {
+      @content;
+    }
+  };
+@mixin last-child() {
+    &:last-of-type {
+      @content;
+    }
+  };
+@mixin even() {
+    &:nth-child(even) {
+      @content;
+    }
+  };
+@mixin odd() {
+    &:nth-child(odd) {
+      @content;
+    }
+  };
+@mixin first-last() {
+    &:first-child,
+    &:last-child {
+      @content;
+    }
+  };
+@mixin unique() {
+    &:only-child {
+      @content;
+    }
+  };
+@mixin only() {
+    &:only-child {
+      @content;
+    }
+  };
+@mixin not-unique() {
+    &:not(:only-child) {
+      @content;
+    }
+  };

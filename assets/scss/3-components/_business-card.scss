@@ -1,0 +1,58 @@
+// =====================
+// Business Card
+// =====================
+
+.bcard {
+    perspective: 150rem;
+    height: 20rem;
+    width: 30rem;
+    position: relative;
+    @include e(side) {
+      height: 15rem;
+      transition: all 0.8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 30rem;
+      @include prefix('backface-visibility', 'hidden', webkit);
+      border-radius: 3px;
+      overflow: hidden;
+      @include prefix('box-shadow', '0 1.5rem 4rem rgba(#{$theme-foreground}, 0.4)', webkit moz);
+      @include m(front) {
+        background-color: #1c1c1c;
+      }
+      @include m(back) {
+        transform: rotateY(180deg);
+        background-color: #1c1c1c;
+      }
+    }
+    &:hover &_side-front {
+      transform: rotateY(-180deg);
+    }
+    &:hover &_side-back {
+      transform: rotateY(0deg);
+    }
+    @include e(cont) {
+      height: 15rem;
+      background-color: #1c1c1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $theme-background;
+    }
+    @include e(cta) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      color: $theme-background;
+      p {
+        margin-left: 1rem;
+        & > .space {
+          margin-left: 2rem;
+        }
+      }
+    }
+};

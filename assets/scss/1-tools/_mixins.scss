@@ -1,0 +1,152 @@
+// =====================
+// BEM Selectors
+// =====================
+
+@mixin e($element) {
+    &_#{$element} {
+      @content;
+    }
+};
+@mixin m($modifier) {
+    &-#{$modifier} {
+      @content;
+    }
+};
+
+// =====================
+// Centering Elements
+// =====================
+
+@mixin center($position) {
+    position: absolute;
+  
+    @if $position == 'vertical' {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translate(-50%);
+    } @else if $position == 'horizontal' {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translate(-50%);
+    } @else if $position == 'both' {
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+};
+
+// =====================
+// Clearfix
+// =====================
+
+
+
+// ==========================
+// Define Default Font Sizes
+// ==========================
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+// =====================
+// Background Gradient
+// =====================
+
+@mixin background-gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+  
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse cover, center, $start-color, $end-color);
+    }
+};
+
+// =====================
+// Padding & Margin
+// =====================
+
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+};
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+};
+
+// =====================
+// Vendor Prefixes
+// =====================
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+    @if $vendors {
+      @each $vendor in $vendors {
+        #{'-' + $vendor + '-' + $property}: #{$value};
+      }
+    }
+    @if $default {
+      #{$property}: #{$value};
+    }
+};
+
+// =====================
+// Truncate
+// =====================
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+};
+
+// =====================
+// Aspect Ratio
+// =====================
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &::before {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-top: ($height / $width) * 100%;
+    }
+    > .inner-ar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+};
+
+// =====================
+// Box Shadow
+// =====================
+
+@mixin box-shadow($left: 0px, $top: 0px, $blur: 25px, $spread: 0px, $shadow-color: #ddd) {
+    -webkit-box-shadow: $left $top $blur $spread $shadow-color;
+    -moz-box-shadow: $left $top $blur $spread $shadow-color;
+    box-shadow: $left $top $blur $spread $shadow-color;
+};

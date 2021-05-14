@@ -1,0 +1,12 @@
+// =====================
+// Hero Section
+// =====================
+
+.hero {
+    @include background-gradient($theme-primary--light, $theme-primary--lighter, vertical);
+    color: $theme-light;
+    border-radius: 0px;
+};
+hr.my-4 {
+    background-color: $theme-light;
+};
